@@ -1,0 +1,40 @@
+/*
+function scroll(){
+  window.addEventListener('wheel', function(e) {
+    e.preventDefault();
+   console.log(pageYOffset + 'px')
+  });
+}
+
+scroll()
+*/
+
+/*
+//show and hide topbtn
+function yScroll() {
+
+  var yPos = window.pageYOffset;
+
+  if (yPos >= window.innerHeight - 10) {
+    document.getElementById("topbtn").style.opacity = 1;
+  } else {
+    document.getElementById("topbtn").style.opacity = 0;
+  }
+}
+
+//scroll to top
+function goTop () {
+  let topbtn = document.getElementById('topbtn');
+  let top = window.pageYOffset;
+
+  var intervalTimer = setInterval(function() {
+    if (top > 0) {
+      top -= 15;
+      window.scrollTo(0, top);
+    } else {
+      topbtn.style.opacity = 0;
+      clearInterval(intervalTimer);
+    }
+  }, 0.5); 
+}
+*/

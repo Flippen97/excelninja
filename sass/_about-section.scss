@@ -1,0 +1,45 @@
+.aboutSection {
+    width: 100%;
+    background-image: url('../Assets/interior.png');
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.aboutSection::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.aboutSectionWrapper {
+   z-index: 1;
+   position: relative;
+}
+.aboutSection h2 {
+    margin: 0;
+    font-size: 2.3em;
+    margin-bottom: 40px;
+}
+.aboutSection img {
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+}
+.aboutSection p {
+    margin: 20px 0;
+    max-width: 450px;
+}
+.aboutSection p span{
+    font-size: 1.5em;
+    display: block;
+}

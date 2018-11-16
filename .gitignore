@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+bower_components
+*.sketch
+stock-photos
+package-lock.json

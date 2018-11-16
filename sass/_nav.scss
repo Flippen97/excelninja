@@ -1,0 +1,105 @@
+
+.slide-nav-btn-container{
+    margin: 0;
+    padding: 15px;
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+    border-radius: 10px;
+}
+#slide-nav-btn{
+    width: 36px;
+    height: 18px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+  .line{
+        width: 36px;
+        height: 2px;
+        display: block;
+        background-color: $white;
+        position: absolute;
+        left: 0;
+        transition: all .3s cubic-bezier(0.580, 0.000, 0.580, 1.000);
+    
+    &:nth-child(1){
+        top: 0;
+    }
+    &:nth-child(2){
+        top: 50%;
+        margin-top: -1px;
+        margin-left:8px;
+        width: 28px;
+    }
+    &:nth-child(3){
+        top: 100%;
+        margin-top: -2px;
+        margin-left:16px;
+        width: 20px;
+    }
+  }
+  
+  &:hover, &:focus{
+    .line{
+      &:nth-child(1){
+        transform: translateY(-1px);
+      }
+      &:nth-child(3){
+        transform: translateY(1px);
+      }
+    }
+  }
+  &.slide-nav-btn-active{
+    .line{
+      margin-left:2px;
+      &:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        width: 32px;
+        margin-right:3px;
+      }
+      &:nth-child(2){
+        opacity: 0;
+      }
+      &:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        margin-left:2px;
+        width: 32px;
+      }
+    }
+  }
+}
+.slide-nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    min-height: 100vh;
+    z-index: 888;
+    transition: 0.6s;
+    top: -100%;
+    text-align: center;
+}
+.slide-nav-active {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide-nav ul {
+    list-style: none;
+    padding: 0;
+}
+.slide-nav ul li{
+    padding-bottom: 2px;
+}
+.slide-nav ul li a {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 35px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+.slide-nav ul li a:hover {
+    color: #fff;
+  }

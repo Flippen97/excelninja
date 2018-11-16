@@ -1,0 +1,32 @@
+@keyframes bouncer {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+	30% {
+		transform: rotate(-45deg) translate(-10px, 10px);
+	}
+	50% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+}
+
+.scroll-btn {
+	transition: all 250ms ease-in-out 25ms;
+	span {
+		position: absolute;
+		width: 34px;
+		height: 34px;
+		border-left: 4px solid $white;
+		border-bottom: 4px solid $white;
+		transform: rotate(-45deg);
+		animation: bouncer 2s infinite;
+	}
+	&:hover span {
+		width: 35px;
+		height: 35px;
+		border-left: 6px solid $white;
+		border-bottom: 6px solid $white;
+		transition: all 400ms ease 50ms;
+		animation: none;
+	}
+}

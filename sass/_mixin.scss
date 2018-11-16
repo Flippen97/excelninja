@@ -1,0 +1,15 @@
+@mixin for-tablet{
+    @media (min-width: 760px) { @content; }
+}
+@mixin for-desktop{
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop{
+    @media (min-width: 1800px) { @content; }
+}
+@mixin for-landscape-mobile{
+    @media (max-height: 500px) and (max-width: 900px) {@content;}
+}
+@mixin for-landscape-tablet{
+    @media (max-height: 800px) and (max-width: 1050px) and (min-width: 760px) and (min-height:600px){@content;}
+}

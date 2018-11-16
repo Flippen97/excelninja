@@ -1,0 +1,90 @@
+.quote{
+    color: black;
+    height: 100vh;
+    text-align: center;
+    padding: 30px;
+}
+.quoteWrapper{
+    height: calc(100vh - 60px);
+    background-image: url(../Assets/bild_pengar.png), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-blend-mode: lighten;
+    display: grid;
+    align-items: center;
+}
+.quoteInnerWrapper{
+    margin: 0 15px;
+}
+.quotation--top,
+.quotation--bottom{
+    display: block; 
+    font-size: 6em;
+    line-height: 0;
+    padding-bottom: 63px;
+}
+.quoteInnerWrapper h2{
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+.quoteInnerWrapper p{
+    font-size: 1.1em;
+    margin: 15px 0;
+    padding: 0;
+    color: #414141;
+}
+@include for-tablet{
+    .quoteWrapper{
+        background-size: cover;
+    }
+    .quoteInnerWrapper {
+        margin: 0 60px;
+    }
+    .quoteInnerWrapper h2 {
+        font-size: 2.6em;
+        margin: 25px 0;
+    }
+    .quoteInnerWrapper p {
+        font-size: 1.5em;
+        margin: 20px 0;
+    }
+    .quotation--bottom, .quotation--top {
+        font-size: 8em;
+        padding-bottom: 85px;
+    }
+}
+@include for-desktop{
+    .quoteInnerWrapper {
+        margin: 0 160px;
+    }
+    .quoteInnerWrapper h2 {
+        font-size: 3.5em;
+        margin: 35px 0;
+    }
+    .quoteInnerWrapper p {
+        font-size: 2em;
+        margin: 25px 0;
+    }
+    .quotation--bottom, .quotation--top {
+        font-size: 8em;
+        padding-bottom: 85px;
+    }
+}
+@include for-landscape-mobile{
+    .quoteInnerWrapper {
+        margin: 0 60px;
+    }
+    .quoteInnerWrapper h2 {
+        font-size: 1.6em;
+        margin: 15px 0;
+    }
+    .quoteInnerWrapper p {
+        font-size: 0.9em;
+        margin: 10px 0;
+    }
+    .quotation--bottom, .quotation--top {
+        font-size: 4em;
+        padding-bottom: 40px;
+    }
+}
