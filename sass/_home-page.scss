@@ -53,7 +53,7 @@
 @media (min-width: 760px) and (max-height: 850px)  { 
     .home img{
         width: 500px;
-    left: calc(50% - 250px);
+        left: calc(50% - 250px);
     }
 }
 @include for-desktop{

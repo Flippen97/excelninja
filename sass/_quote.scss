@@ -1,11 +1,7 @@
 .quote{
     color: black;
-    height: 100vh;
     text-align: center;
-    padding: 30px;
-}
-.quoteWrapper{
-    height: calc(100vh - 60px);
+    height: 100vh;
     background-image: url(../Assets/bild_pengar.png), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
     background-size: contain;
     background-position: center;
@@ -13,6 +9,7 @@
     background-blend-mode: lighten;
     display: grid;
     align-items: center;
+    border: 30px solid #fff;
 }
 .quoteInnerWrapper{
     margin: 0 15px;
@@ -35,7 +32,7 @@
     color: #414141;
 }
 @include for-tablet{
-    .quoteWrapper{
+    .quote{
         background-size: cover;
     }
     .quoteInnerWrapper {

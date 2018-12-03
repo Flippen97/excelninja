@@ -99,7 +99,7 @@ function changeHashScroll(direction){
 			}
 		}
 }
-
+/*
 function showAnimate(arrivePoint) {
 	var flags = true;
 	var timer = setInterval(function() {
@@ -209,21 +209,48 @@ function stopScroll() {
 }
 
 var isComplete = true;
-toggleNav();
-eventlistener()
+
 document.addEventListener('DOMMouseScroll', wheel, false); //firefox
 document.addEventListener('mousewheel', wheel, false); //chrome, IE
-
+*/
+toggleNav();
+eventlistener()
 
 function mobileVhFix(){
 	var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 	document.getElementById('section1').style['min-height'] = height + 'px';
 	document.querySelector('.slide-nav').style['min-height'] = height + 'px';
-	
+	var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 	window.addEventListener('resize', function(event){
-		height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-		document.getElementById('section1').style['min-height'] = height + 'px';
-		document.querySelector('.slide-nav').style['min-height'] = height + 'px';
+		var width2 = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+		if(width != width2){
+			setTimeout(function(){
+				height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+				document.getElementById('section1').style['min-height'] = height + 'px';
+				document.querySelector('.slide-nav').style['min-height'] = height + 'px';
+				width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+			}, 500);
+		}
 	});
 }
 mobileVhFix();
+/*
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+var vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', vh+'px');
+// We listen to the resize event
+window.addEventListener('resize', function () {
+	// We execute the same script as before
+	var vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', vh+'px');
+});
+
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()
+*/

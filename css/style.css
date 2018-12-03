@@ -202,12 +202,8 @@
     bottom: 12px; } }
 .quote {
   color: black;
-  height: 100vh;
   text-align: center;
-  padding: 30px; }
-
-.quoteWrapper {
-  height: calc(100vh - 60px);
+  height: 100vh;
   background-image: url(../Assets/bild_pengar.png), -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3)));
   background-image: url(../Assets/bild_pengar.png), linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
   background-size: contain;
@@ -217,7 +213,8 @@
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  border: 30px solid #fff; }
 
 .quoteInnerWrapper {
   margin: 0 15px; }
@@ -240,7 +237,7 @@
   color: #414141; }
 
 @media (min-width: 760px) {
-  .quoteWrapper {
+  .quote {
     background-size: cover; }
 
   .quoteInnerWrapper {
@@ -332,6 +329,113 @@
   font-size: 1.5em;
   display: block; }
 
+.offers {
+  color: black;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.offers h1 {
+  text-align: center;
+  margin: 0;
+  padding: 20px 0; }
+
+.offers > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px; }
+
+.offers > div > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;*/
+  display: block;
+  /* text-align: center; */
+  padding: 0 15px; }
+
+.offers img {
+  width: 25%; }
+
+.offers h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.3em; }
+
+.offers button {
+  padding: 0;
+  position: relative; }
+
+.offers button::after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #000;
+  border-right: 3px solid #000;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.offers button span {
+  display: none; }
+
+/*
+article div{
+    background-color: black;
+    margin: 0 25px;
+    margin-top: 100px;
+}
+article div img{
+    width: 80%;
+    margin: 0 10%;
+    margin-top: -100px;
+}
+article div h2{
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+}
+*/
+@media (max-height: 500px) and (max-width: 900px) {
+  .offers {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+  .offers h1 {
+    width: 100%; }
+
+  .offers > div {
+    width: calc(50% - 20px); }
+
+  .offers h2 {
+    font-size: 1em; }
+
+  .offers p {
+    font-size: 0.8em; } }
 @-webkit-keyframes bouncer {
   0% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
@@ -342,7 +446,6 @@
   50% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
             transform: rotate(-45deg) translate(0, 0); } }
-
 @keyframes bouncer {
   0% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
@@ -387,6 +490,15 @@ main {
 		font-size: $header-size;
 	}
 }*/
+@media (min-width: 1200px) {
+  section {
+    background-attachment: fixed; }
+
+  .quoteWrapper {
+    background-attachment: fixed; } }
+:root {
+  --app-height: 100vh; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -445,41 +557,3 @@ button {
  }
 
 */
-.section4 {
-  color: black;
-  height: 100vh;
-  max-width: 1000px;
-  margin: 0 auto; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr); }
-
-article {
-  -webkit-box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
-  padding: 5px;
-  margin: 10px; }
-
-article div {
-  background-color: black;
-  margin: 0 25px;
-  margin-top: 100px; }
-
-article div img {
-  width: 80%;
-  margin: 0 10%;
-  margin-top: -100px; }
-
-article div h2 {
-  color: white;
-  text-align: center;
-  padding-bottom: 25px; }
-
-@media (min-width: 800px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); }
-
-  .grid h1 {
-    grid-column: span 3; } }
