@@ -4,3 +4,5 @@
 https://www.taniarascia.com/getting-started-with-grunt-and-sass/
 ###sass structure
 http://thesassway.com/beginner/how-to-structure-a-sass-project
+## img minifier
+https://tinypng.com/

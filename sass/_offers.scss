@@ -1,18 +1,18 @@
 .offers{
     color: black;
     height: 100vh;
-    max-width: 1000px;
+  /*  max-width: 1000px; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.offers h1{
+.offers h2{
     text-align: center;
     margin: 0;
     padding: 20px 0;
 }
-.offers > div{
+.offersCard{
     display: flex;
     box-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
     padding: 10px;
@@ -20,27 +20,26 @@
     align-items: center;
     border-radius: 5px;
 }
-.offers > div > div{
+.offersCard > div{
     flex: 1;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;*/
     display: block;
-    /* text-align: center; */
     padding: 0 15px;
 }
-.offers img{
+.offersCard > div p:nth-last-child(1){
+    display: none;
+}
+.offersCard img{
     width: 25%;
 }
-.offers h2{
+.offersCard h3{
     margin: 0 0 5px 0;
     font-size: 1.3em;
 }
-.offers button{
+.offersCard button{
     padding: 0;
     position: relative;
 }
-.offers button::after{
+.offersCard button::after{
     content: "";
     position: absolute;
     left: -15px;
@@ -51,50 +50,180 @@
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-.offers button span{
+.offersCard button span{
     display: none;
 }
-/*
-article div{
-    background-color: black;
-    margin: 0 25px;
-    margin-top: 100px;
-}
-article div img{
-    width: 80%;
-    margin: 0 10%;
-    margin-top: -100px;
-}
-article div h2{
-    color: white;
-    text-align: center;
-    padding-bottom: 25px;
-}
-*/
 @include for-tablet{
-
+    .offers{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .offers h2 {
+        width: 100%;
+    }
+    .offersCard {
+        width: calc(50% - 25px);
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .offersCard .blackBlock{
+        position: relative;
+        width: 100%;
+    }
+    .offersCard .blackBlock::after {
+        content: "";
+        position: absolute;
+        left: 17%;
+        top: 30px;
+        width: 66%;
+        height: 200px;
+        background-color: #000;
+        z-index: 1;
+    }
+    .offersCard img {
+        z-index: 3;
+        position: relative;
+        width: 120px;
+    }
+    .offersCard>div {
+        padding: 0;
+        width: 66%;
+        text-align: center;
+    }
+    .offersCard h3 {
+        padding: 25px 0 40px 0;
+        z-index: 3;
+        position: relative;
+        width: 64%;
+        margin: 0 auto;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .offersCard > div p {
+        padding: 10px 0;
+        font-weight: 700;
+        width: 94%;
+        margin: 0 auto;
+    }
+    .offersCard > div p:nth-last-child(1) {
+        display: block;
+        border-top: 1px solid lightgrey;
+        font-size: 0.8em;
+    }
+    .offersCard button span {
+        display: block;
+    }
+    .offersCard button::after{
+        content: none;
+    }
+    .offersCard button{
+        margin-top: 10px;
+        padding: 10px 50px;
+    }
 }
 @include for-desktop{
-
+    .offersCard {
+        width: calc(26% - 25px);
+        padding: 0;
+        margin: 0;
+    }
+    .offersCard .blackBlock::after {
+        content: "";
+        left: 15%;
+        width: 70%;
+    }
+    .offersCard>div {
+        width: 70%;
+    }
+    .offersCard h3 {
+        width: 68%;
+        margin: 0 auto;
+    }
 }
 @include for-landscape-mobile{
     .offers{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .offers h1 {
+    .offers h2 {
         width: 100%;
     }
-    .offers>div {
+    .offersCard {
         width: calc(50% - 20px);
+        flex-direction: row;
+        align-content: normal;
+        box-shadow: 0 2px 18px rgba(0,0,0,.3);
     }
-    .offers h2{
+    .offersCard img{
+        width: 25%;
+    }
+    .offersCard .blackBlock::after {
+        content: none;
+    }
+    .offersCard>div {
+        padding: 0 15px;
+        width: auto;
+        text-align: left;
+    }
+    .offersCard h3 {
+        padding: 0;
+        width: auto;
         font-size: 1em;
+        letter-spacing: 0;
+        color: #000;
     }
-    .offers p{
-        font-size: 0.8em;
+    .offersCard>div p {
+        font-size: .9em;
+        text-align: left;
+        padding: 5px 0;
+        font-weight: 400;
+        width: 77%;
+        margin: 0;
+    }
+    .offersCard > div p:nth-last-child(1) {
+        display: none;
+    }
+    .offersCard button {
+        padding: 0;
+        margin-top: 0;
+    }
+    .offersCard button span {
+        display: none;
+    }
+    .offersCard button::after{
+        content: "";
+        position: absolute;
+        left: -15px;
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid #000;
+        border-right: 3px solid #000;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .offersCard .blackBlock {
+       display: none;
     }
 }
 @include for-landscape-tablet{
-
+    .offersCard {
+        width: calc(27% - 25px);
+        padding: 0;
+        margin: 0;
+    }
+    .offersCard .blackBlock::after {
+        content: "";
+        left: 12.5%;
+        width: 75%;
+    }
+    .offersCard>div {
+        width: 75%;
+    }
+    .offersCard h3 {
+        width: 73%;
+        margin: 0 auto;
+    }
 }

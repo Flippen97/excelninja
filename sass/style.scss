@@ -5,10 +5,10 @@
 @import 'quote';
 @import 'about-section';
 @import 'offers';
+@import 'admin';
 @import 'scroll-btn';
 /*
 main {
-
 	max-width: $content-width;
     margin: 0 auto;
 	color: $font-color;
@@ -34,9 +34,14 @@ main {
 * p{
     margin: 0;
 }
+/*
 @font-face {
     font-family: 'MyWebFont';
     src: url('../Assets/Japan.otf'); 
+}
+*/
+h1, h2{
+    font-family: 'Merienda One', Arial, Helvetica, sans-serif; 
 }
 body {
     margin: 0;

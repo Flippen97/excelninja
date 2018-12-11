@@ -3,6 +3,7 @@
     background-image: url('../Assets/interior.png');
     background-size: cover;
     text-align: center;
+    min-height: 100vh;
 }
 .home::after{
     content: '';
@@ -19,7 +20,6 @@
     align-self: center;
     width: 100%;
     font-size: 3em;
-    font-family: 'MyWebFont';
     position: absolute;
     top: 15%;
     z-index: 1;
@@ -56,11 +56,13 @@
         left: calc(50% - 250px);
     }
 }
+
 @include for-desktop{
     .home h1{
         font-size: 7em;
         top: 15%;
         left: 10%;
+        width: auto;
         width: fit-content;
     }
     .home img{

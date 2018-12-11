@@ -42,9 +42,19 @@ module.exports = function (grunt) {
       }]
         }
       },
+      babel: {
+        options: {
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            "js/bundle.js": "src/script.js"
+          }
+        }
+      },
       uglify: { // Begin JS Uglify Plugin
         build: {
-          src: ['src/*.js'],
+          src: ['js/bundle.js'],
           dest: 'js/script.min.js'
         }
       },
@@ -54,8 +64,8 @@ module.exports = function (grunt) {
           tasks: ['sass', 'postcss', 'cssmin']
         },
         js: {
-          files: '**/*.js',
-          tasks: ['uglify']
+          files: '**/script.js',
+          tasks: ['babel','uglify']
         }
       }
     });
@@ -63,8 +73,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-uglify-es');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-babel');
   
     // Register Grunt tasks
     grunt.registerTask('default', ['watch']);
