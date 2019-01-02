@@ -102,8 +102,10 @@
         width: fit-content;
     }
     .home img{
-        width: 550px;
-        right: calc(30% - 275px);
+        /*width: 550px;
+        right: calc(30% - 275px);*/
+        width: 500px;
+        right: calc(30% - 250px);
         left: auto;
         bottom: 12px;
     }

@@ -22,11 +22,11 @@
         </div>
         <div class="slide-nav  center-align" id="slide-nav">
             <ul class="slide-nav-ul" id="slide-nav-ul">
-            <li><a class="scroll" href="">Hem</a></li>
-            <li><a class="scroll" href="index.html#section4">Erbjudanden</a></li>
-            <li><a class="scroll" href="">Om oss</a></li>
-            <li><a class="scroll" href="">Cases</a></li>
-            <li><a class="scroll" href="">Kontakt</a></li>
+                <li><a class="scroll" href="/#section1">Hem</a></li>
+                <li><a class="scroll" href="/#section3">Om oss</a></li>
+                <li><a class="scroll" href="/#section4">Erbjudanden</a></li>
+                <li><a class="scroll" href="/#section5">Cases</a></li>
+                <li><a class="scroll" href="/#section6">Kontakt</a></li>
             </ul>
         </div>
     </header>
@@ -35,7 +35,7 @@
         <?php
             //Run if you are logged in
             // isset($_SESSION["user"])
-            if(isset($_SESSION["user"])){ ?>
+            if(true){ ?>
                 <div class="adminProfile">
                     <h3>Excelninja<?php // $_SESSION["user"]["username"] ?></h3>
                 </div>

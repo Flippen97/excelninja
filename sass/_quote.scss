@@ -22,7 +22,7 @@
     padding-bottom: 63px;
 }
 .quoteInnerWrapper h2{
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin: 20px 0;
 }
 .quoteInnerWrapper p{
@@ -39,7 +39,7 @@
         margin: 0 60px;
     }
     .quoteInnerWrapper h2 {
-        font-size: 2.6em;
+        font-size: 2.8em;
         margin: 25px 0;
     }
     .quoteInnerWrapper p {
@@ -69,6 +69,9 @@
     }
 }
 @include for-landscape-mobile{
+    .quote{
+        background-size: cover;
+    }
     .quoteInnerWrapper {
         margin: 0 60px;
     }

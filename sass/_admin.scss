@@ -23,20 +23,23 @@
 .loginMenu h2{
     margin-top: 0;
 }
-.loginMenu .input-field {
+.loginMenu .input-field,
+.searchCases {
     position: relative;
     width: 250px;
     height: 44px;
     line-height: 44px;
     margin: 10px auto;
 }
-.loginMenu label {
+.loginMenu label,
+.searchCases label {
     position: absolute;
     top: -5px;
     left: 0;
     transition: 0.2s all;
 }
-.loginMenu  input {
+.loginMenu  input,
+.searchCases input {
     width: 100%;
     border: 0;
     outline: 0;
@@ -47,11 +50,15 @@
     border-bottom: 2px solid #fff;
 }
 .loginMenu  input:focus,
-.loginMenu  input:valid {
+.loginMenu  input:valid,
+.searchCases  input:focus,
+.searchCases  input:valid {
     border-color: #00dd22;
 }
 .loginMenu  input:focus~label,
-.loginMenu  input:valid~label {
+.loginMenu  input:valid~label,
+.searchCases  input:focus~label,
+.searchCases  input:valid~label {
     top: -24px;
     color: #00dd22;
 }
@@ -67,17 +74,174 @@
 .loginMenu button:focus {
   transform: scale(1.04);
 }
+/************************************************************************************
+*****************************        Admin panel         ****************************
+*************************************************************************************/
+
 .adminProfile{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 50px 3px #0d2;
+    border: 4px solid #00dd22;
+    border-radius: 10px;
+    padding: 20px 0 35px;
+}
+.adminProfile h3{
+    display: inline-block;
+    width: 50%;
+    font-size: 2em;
+    margin-top: 0;
+    font-family: 'Merienda One', Arial, Helvetica, sans-serif;
+}
+.searchCases{
+    display: inline-block;
+}
+.cases{
+    height: 380px;
+    overflow: scroll;
+}
+.case{
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    padding: 15px 10px;
+    border-bottom: #fff 2px solid;
+}
+.case .id{
+    width: 150px;
+}
+.case .title{
+    text-align: left;
+}
+.case .title,
+.case .company{
+    flex: 1;
+}
+.deleteButton,
+.updateButton{
+    text-indent: -99999px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    position: relative;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #FF0000;
+    box-shadow: 0 0 12px 0px #FF0000;
+}
+.deleteButton:hover,
+.updateButton:hover{
+    -ms-transform:scale(1.08);
+	-webkit-transform:scale(1.08);
+	transform:scale(1.08);
+    box-shadow: inset 0 0 12px 0px #FF0000;
+}
+.deleteButton::after,
+.updateButton::after{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../Assets/bin.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    content: "";
+}
+.updateButton{
+    border: 1px solid #fff;
+    box-shadow: 0 0 12px 0px #fff;
+}
+.updateButton:hover{
+    box-shadow: inset 0 0 12px 0px #fff;
+}
+.updateButton::after{
+    content: "";
+    background-image: url(../Assets/pencil.svg);
+}
+.newCaseButton{
+    margin: 20px 15px 0 0;
+}
+.adminProfile a{
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/************************************************************************************
+*****************************         Case Form          ****************************
+*************************************************************************************/
+.caseFormWrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.caseForm{
+    width: 80%;
+    margin: 100px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px 3px #0d2;
+    border: 4px solid #00dd22;
+    border-radius: 10px;
+    padding: 20px 0 35px;
+}
+.caseForm label{
     display: block;
 }
-textarea {
+.caseForm div:nth-child(2){
+    width: calc(33% - 15px);
+    margin: 0 5px 0 10px; 
+}
+.caseForm div:nth-child(4){
+    width: calc(33% - 15px);
+    margin: 0 10px 0 5px; 
+}
+.caseForm div:nth-child(3){
+    width: calc(33% - 10px);
+    margin: 0 5px; 
+}
+.caseForm div:nth-child(5),
+.caseForm div:nth-child(6),
+.caseForm div:nth-child(7),
+.caseForm div:nth-child(8){
+    width: calc(50% - 15px);
+    margin: 0 5px 0 10px; 
+    label{
+        margin: 10px 0 5px;
+    }
+}
+.caseForm div:nth-child(6),
+.caseForm div:nth-child(8){
+    margin: 0 10px 0 5px; 
+}
+.caseForm button{
+    margin: 0 auto;
+}
+.caseForm textarea,
+.caseForm input {
     width: 100%;
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    color: #fff;
+    background-color: rgba(255,255,255,0.1);
     font-size: 16px;
     resize: none;
+}
+.caseForm input{
+    height: auto;
 }

@@ -86,6 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 1600px;
 }
 .slide-nav ul {
     list-style: none;
@@ -99,7 +100,22 @@
     font-size: 35px;
     text-decoration: none;
     transition: 0.3s;
-  }
+}
 .slide-nav ul li a:hover {
     color: #fff;
-  }
+}
+@media (min-width: 1600px) { 
+    .slide-nav-btn-container {
+        margin: 0;
+        padding: 15px;
+        background-color: rgba(0,0,0,.6);
+        position: fixed;
+        top: 10px;
+        z-index: 9999;
+        border-radius: 10px;
+        right: auto;
+        left: 50%;
+        margin-left: 755px;
+        transform: translateX(-50%);
+    }
+}

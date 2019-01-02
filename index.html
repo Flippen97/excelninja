@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<title>Exelninja</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.0/tiny-slider.css">
+	<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.0/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Merienda+One:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 	<link href="css/style.min.css" rel="stylesheet">
@@ -21,11 +23,11 @@
 		</div>
 		<div class="slide-nav  center-align" id="slide-nav">
 			<ul class="slide-nav-ul" id="slide-nav-ul">
-			<li><a class="scroll" href="">Hem</a></li>
-			<li><a class="scroll" href="index.html#section4">Erbjudanden</a></li>
-			<li><a class="scroll" href="">Om oss</a></li>
-			<li><a class="scroll" href="">Cases</a></li>
-			<li><a class="scroll" href="">Kontakt</a></li>
+			<li><a class="scroll" href="/#section1">Hem</a></li>
+			<li><a class="scroll" href="/#section3">Om oss</a></li>
+			<li><a class="scroll" href="/#section4">Erbjudanden</a></li>
+			<li><a class="scroll" href="/#section5">Cases</a></li>
+			<li><a class="scroll" href="/#section6">Kontakt</a></li>
 			</ul>
 		</div>
 	</header>
@@ -42,24 +44,31 @@
 		<section class="quote" id="section2">
 			<div class="quoteInnerWrapper">
 				<span class="quotation--top">,,</span>
-				<h2>Ta era befintliga Excellösningar till nästa nivå!</h2>
-				<p> Jag låter era kalkylark komma till liv, 
-				så att ni kan utföra jobbet betydligt snabbare 
-				och bättre i snygga och tillförlitliga modeller i världens mest använda affärsverktyg.
+				<h2>Lyckas bättre med Excel!</h2>
+				<p> Få hjälp av en ninja och låt Excel bli er vardagshjälte! <br/>
+				Vi levererar snygga och genomtänkta Excellösningar som passar er verksamhet
+				och kan hjälpa er attt få en bättre kontroll över ert arbete och era affärer!
 				</p>
 				<span class="quotation--bottom">,,</span>
 			</div>
 		</section>
 		<section class="aboutSection" id="section3">
 			<div class="aboutSectionWrapper">
-				<h2>Hej!</h2>
-				<img src="Assets/avatar.png" alt="Bild på Bouke van der Gaast">
-				<p>
-					<span>Jag heter Bouke van der Gaast​</span>
-					I många år har jag arbetat intensivt med affärsanalyser, 
-					samt verksamhetsutveckling där jag har hjälpt många företag 
-					till en bättre vardag och tagit fram genomtänkt beslut 
-					& systemstöd med hjälp av deras befintliga system och Excel.
+				<h2 class="aboutSectionHeading">HEJ!</h2>
+				<div>
+					<img class="aboutSectionAvatar" src="Assets/avatar.png" alt="Bild på Bouke van der Gaast">
+				</div>
+				<p class="aboutSectionText">
+					<span>Låt mig hjälpa er att sätta lite struktur i vardagen!</span>
+					Med struktur och tillgång till rätt stöd i vardagen kan man lägga fokus på rätt saker 
+					och kan det dagliga arbetet genomföras på ett effektivt sätt.​<br/><br/>
+
+					Under mina år som verksamhetsutvecklare och 
+					Excelkonsult har jag mött en massa med vardagliga utmaningar hos olika företag och 
+					byggt en fin verktygslåda med både kunskap och vassa hjälpmedel i Excel hjälper
+					företaget och dess anställda framåt.​<br/><br/>
+					
+					Berätta om er affärsutmaning, så kan vi se hur vi tillsammans kan skapa en bättre vardag hos er!
 				</p>
 				<button>Läs mer om mig...</button>
 			</div>
@@ -72,13 +81,13 @@
 				<div>
 					<h3>Arbeta enklare</h3>
 					<p>
-						Skapa ordning och tillförlitlighet!
+						Lyft era Excellösningar till nästa nivå!
 					</p>
 					<p>
-						Förbättra befintliga Excelmodeller Strukturera upp Dataunderlag
+						Skapa ording och reda i era befintliga Excelmodeller
 					</p>
 				</div>
-				<button><span>Läs mer...</span></button>
+				<button class="offerButton" data-id="1"><span>Läs mer...</span></button>
 			</div>
 			<div class="offersCard">
 				<span class="blackBlock"></span>
@@ -89,10 +98,10 @@
 						Låt Excel göra en stor del av jobbet!
 					</p>
 					<p>
-						Addera smarta funktioner Automatisera en del av arbetet
+						Automatisera en del av ert dagliga arbete med Excel
 					</p>
 				</div>
-				<button><span>Läs mer...</span></button>
+				<button class="offerButton" data-id=2><span>Läs mer...</span></button>
 			</div>
 			<div class="offersCard">
 				<span class="blackBlock"></span>
@@ -100,13 +109,13 @@
 				<div>
 					<h3>Samarbeta smartare</h3>
 					<p>
-						Ge Excel förmåga att samarbeta!
+						Ge Excel förmåga att kunna samarbeta!
 					</p>
 					<p>
-						Skapa en samarbetsplattform för tex planering, budgetering
+						Skapa en samarbetsplattform och samarbeta effektivare
 					</p>
 				</div>
-				<button><span>Läs mer...</span></button>
+				<button class="offerButton" data-id=3><span>Läs mer...</span></button>
 			</div>
 			<div class="offersCard">
 				<span class="blackBlock"></span>
@@ -114,48 +123,29 @@
 				<div>
 					<h3>Ta bättre beslut</h3>
 					<p>
-						Vassa till era beslutsunderlag!
+						Vassa till era <br/> beslutsunderlag!
 					</p>
 					<p>
-						Skapa smarta styrmodeller <br/> Skapa en BI-plattform
+						Bättre insikt och beslut med genomtänkta modeller och rapporter
 					</p>
 				</div>
-				<button><span>Läs mer...</span></button>
+				<button class="offerButton" data-id=4><span>Läs mer...</span></button>
 			</div>
 		</section>
 	</main>
-	<footer>
-	
+	<footer id="section6">
+		<div>
+			<h2>NYFIKEN HUR VI SKULLE KUNNA HJÄLPA ER TILL EN BÄTTRE VARDAG?</h2>
+			<a href="/"><img src="Assets/email.svg" alt="Epost icon">info@excelninja.se​</a>
+			<a href="/"><img src="Assets/telephone.svg" alt="Mobil icon">070-8649774​</a>
+			<a href="https://www.linkedin.com/in/bouke-van-der-gaast-49067334/?originalSubdomain=se"><img src="Assets/linkedin.svg" alt="LinkedIn icon">Bouke van der Gaast​</a>
+		</div>
+		<div>
+			<img src="Assets/ninjaStop.png" alt="Exelninja figur">
+		</div>
 	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.0/min/tiny-slider.js"></script>
 	<script src="js/script.min.js"></script>
 </body>
 </html>
-		<!------
-		<section class="section3" id="section3">
-				<p>
-					<span>
-						EN VANLIG DAG <br/>
-						PÅ KONTORET
-					</span>
-
-					<span>
-						Ni gör en stor del av ert arbete i Excel. 
-						Vissa av modellerna är kritiska för ert företag 
-						och har vuxit successivt efter alla idéer och tankar ni har haft längs vägen.
-					</span>
-
-					<span>                        
-						” Oj vilken tid nu allting tar! ”<br/>
-						” Kan jag riktigt lita på underlaget? ”<br/>
-						”Allt har blivit så komplicerat!”
-					</span>
-
-					<span>
-						Känslan säger att det bör finnas ett sätt att lösa det, men hur?
-					</span>
-					<span>
-						Här kan jag ta över och visa vägen så att ni får tillbaka kontrollen och kan ta nästa steget...
-					</span>
-				</p>
-		</section>
-		--->

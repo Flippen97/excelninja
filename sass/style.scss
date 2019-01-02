@@ -6,7 +6,11 @@
 @import 'about-section';
 @import 'offers';
 @import 'admin';
+@import 'caseSection';
+@import 'singleCase';
+@import 'offersPage';
 @import 'scroll-btn';
+@import 'footer';
 /*
 main {
 	max-width: $content-width;
@@ -25,30 +29,23 @@ main {
         background-attachment: fixed;
     }
 }
-:root {
-    --app-height: 100vh;
-}
 *{
     box-sizing: border-box;
 }
 * p{
     margin: 0;
 }
-/*
-@font-face {
-    font-family: 'MyWebFont';
-    src: url('../Assets/Japan.otf'); 
-}
-*/
 h1, h2{
+    font-weight: 100;
     font-family: 'Merienda One', Arial, Helvetica, sans-serif; 
 }
 body {
-    margin: 0;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
     /*background-color: rgba(42, 42, 46, 1);*/
     color: white;
-    
+    /*  max-width: 1600px; */
+    margin: 0 auto;
+    /* background-color: #000; */
 }
 button{
     background-color: rgba(0,0,0,0.5);
@@ -56,14 +53,20 @@ button{
     color: #fff;
     padding: 10px 50px;
     border-radius: 10px;
+    font-size: 12px;
 }
+
 /*
 .section3{
-    background-color: black;
+    background-color: bl{
+
+    }
     height: 100vh;
     text-align: center;
     display: grid;
-    align-items: center;
+    align-items: center;{
+
+    }
 }
 .section3 p span:nth-child(1){
    display: block; 

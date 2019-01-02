@@ -1,0 +1,131 @@
+.caseSection{
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Assets/interior.png');
+    background-size: cover;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.caseSection h2{
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.caseCard{
+    border-left: 20px solid #209044;
+    display: flex;
+    padding: 10px 15px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 3px;
+    color: black;
+    background-color: #fff;
+}
+.caseCard > div{
+    width: calc(100% - 10px);
+}
+.caseCardCategory,
+.caseCardHeading{
+    margin: 5px 0;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+.caseCardCategory{
+    font-size: 1.3em;
+}
+.caseCardHeading{
+    font-size: 1em;
+    font-weight: 600;
+}
+.caseCardProblem{
+    display: none;
+}
+.caseCardButton{
+    padding: 0;
+    position: relative;
+}
+.caseCardButton::after{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #209044;
+    border-right: 3px solid #209044;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.caseCardButton span{
+    display: none;
+}
+
+/***************************************************************
+*********************                      *********************
+****************************************************************/
+@include for-tablet{
+    .caseSection h2{
+        font-size: 2.8em;
+    }
+}
+@include for-desktop{
+    .caseSection{
+        background-attachment: fixed;
+    }
+    .caseSection h2{
+        font-size: 3.5em;
+        margin-top: 0;
+    }
+    .caseCard{
+        border-radius: 5px;
+        border-left: none;
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px 20px 10px 10px;
+        box-shadow: inset 0px 0px 5px 0px #222;
+    }
+    .caseCard > div{
+        display: flex;
+        align-items: center;
+    }
+    .caseCard > div > div{
+       flex: 1;
+       padding: 0 15px;
+    }
+    .caseCardCategory{
+        font-size: 1.3em;
+        text-align: center;
+        width: 180px;
+        padding: 25px 20px;
+        margin: 0;
+        color: #fff;
+        background-color: #209044;
+        border-radius: 5px;
+    }
+    .caseCardCategory > span{
+        display: block;
+    }
+    .caseCardHeading{
+        font-size: 1.3em;
+        font-weight: 800;
+        margin-top: 0;
+    }
+    .caseCardProblem{
+        display: block;
+        text-align: left;
+        font-size: 1em;
+        font-weight: 500;
+        height: 70px;
+        overflow: hidden;
+    }
+    .caseCardButton::after{
+        content: "";
+        top: -7.5px;
+        width: 15px;
+        height: 15px;
+        border-top: 5px solid #209044;
+        border-right: 5px solid #209044;
+    }
+}

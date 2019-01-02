@@ -1,16 +1,19 @@
 .offers{
     color: black;
     height: 100vh;
-  /*  max-width: 1000px; */
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #f9f9f9;
+    position: relative;
 }
 .offers h2{
     text-align: center;
     margin: 0;
     padding: 20px 0;
+    font-size: 1.6em;
 }
 .offersCard{
     display: flex;
@@ -19,6 +22,7 @@
     margin: 10px;
     align-items: center;
     border-radius: 5px;
+    background-color: #f9f9f9;
 }
 .offersCard > div{
     flex: 1;
@@ -33,7 +37,7 @@
 }
 .offersCard h3{
     margin: 0 0 5px 0;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 .offersCard button{
     padding: 0;
@@ -61,11 +65,14 @@
     }
     .offers h2 {
         width: 100%;
+        font-size: 2.8em;
     }
     .offersCard {
         width: calc(50% - 25px);
         flex-direction: column;
-        box-shadow: none;
+        border-radius: 10px;
+        /*box-shadow: none;*/
+        box-shadow:0 2px 10px 0px rgba(0,0,0,.3);
     }
     .offersCard .blackBlock{
         position: relative;
@@ -78,7 +85,8 @@
         top: 30px;
         width: 66%;
         height: 200px;
-        background-color: #000;
+        background-color: #222;
+        border-radius: 5px;
         z-index: 1;
     }
     .offersCard img {
@@ -113,6 +121,9 @@
         border-top: 1px solid lightgrey;
         font-size: 0.8em;
     }
+    .offersCard button{
+        background-color: #222;
+    }
     .offersCard button span {
         display: block;
     }
@@ -125,10 +136,16 @@
     }
 }
 @include for-desktop{
+    .offers h2 {
+        font-size: 3.5em;
+        margin-bottom: 30px;
+    }
     .offersCard {
-        width: calc(26% - 25px);
+        /*width: calc(26% - 25px);
         padding: 0;
-        margin: 0;
+        margin: 0;*/
+        width: calc(24% - 25px);
+        padding: 30px 0;
     }
     .offersCard .blackBlock::after {
         content: "";
@@ -139,7 +156,7 @@
         width: 70%;
     }
     .offersCard h3 {
-        width: 68%;
+        width: 80%;
         margin: 0 auto;
     }
 }
@@ -147,11 +164,14 @@
     .offers{
         flex-direction: row;
         flex-wrap: wrap;
+        align-content: center;
     }
     .offers h2 {
         width: 100%;
     }
     .offersCard {
+        padding: 5px;
+        margin: 5px;
         width: calc(50% - 20px);
         flex-direction: row;
         align-content: normal;
@@ -180,7 +200,7 @@
         text-align: left;
         padding: 5px 0;
         font-weight: 400;
-        width: 77%;
+        /* width: 77%; */
         margin: 0;
     }
     .offersCard > div p:nth-last-child(1) {
@@ -210,20 +230,19 @@
 }
 @include for-landscape-tablet{
     .offersCard {
-        width: calc(27% - 25px);
-        padding: 0;
-        margin: 0;
+        width: calc(25% - 20px);
+        padding: 25px 0;
     }
     .offersCard .blackBlock::after {
         content: "";
-        left: 12.5%;
-        width: 75%;
+        left: 7.5%;
+        width: 85%;
     }
     .offersCard>div {
-        width: 75%;
+        width: 90%;
     }
     .offersCard h3 {
-        width: 73%;
+        width: 90%;
         margin: 0 auto;
     }
 }
