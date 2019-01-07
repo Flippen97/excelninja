@@ -52,6 +52,9 @@
     }
 }
 @include for-desktop{
+    .quote{
+        background-attachment: fixed;
+    }
     .quoteInnerWrapper {
         margin: 0 160px;
     }
@@ -60,7 +63,7 @@
         margin: 35px 0;
     }
     .quoteInnerWrapper p {
-        font-size: 2em;
+        font-size: 1.6em;
         margin: 25px 0;
     }
     .quotation--bottom, .quotation--top {

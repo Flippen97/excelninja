@@ -6,11 +6,48 @@
 		this.mobileVhFix();
 		if(document.querySelector('.home')){
 			this.menuLinksScroll();
+			this.getReference();
 		}
 		if(document.getElementById('section4')){
 			this.caseSection();
 			this.offerListiner();
 		}
+	}
+	Index.prototype.getReference = function () {
+		fetch("http://excelninja.se/server/fetchCase.php")
+			.then(response => response.json())
+			.then(cases => {
+				var referenceArray = [];
+				cases.map(function(data){
+					if (data.reference !== ''){
+						referenceArray.push(data.reference)
+					}
+				})
+				this.loopReference(referenceArray)
+			});
+	}
+	Index.prototype.printReference = function (reference) {
+		var referenceCompany = document.querySelector('.referenceCompany');
+		var split = reference.split(" -- ");
+		var content =  `
+						<div>,,</div>
+						<div>
+							<span>${split[0]}</span>
+							${split[1] === undefined ? '' : '<span>' + split[1] + '</span>'}
+						</div>
+						<div>,,</div>
+						`;
+		referenceCompany.innerHTML = content;
+	}
+	Index.prototype.loopReference = function (reference) {
+		var index = 1;
+		this.printReference(reference[0])
+		var interval = setInterval(() => {
+			//this.printReference(reference[index++])
+			reference.forEach( e => {
+				index === reference.length ? index = 0 : null;
+			})   
+		}, 10000)
 	}
 	Index.prototype.menuLinksScroll = function () {
 		var links = document.querySelectorAll('.scroll');
@@ -41,8 +78,8 @@
 		}
 	}
 	Index.prototype.singleOffer = function (offerId) {
-		// http://excelninja.se/offersPage.html
-		fetch('http://localhost:8888/offersPage.html').then(response => {
+		// http://excelninja.se/offersPage.html //http://localhost:8888/offersPage.html 
+		fetch('http://excelninja.se/offersPage.html').then(response => {
 			return response.text()
 			})
 			.then(function(html) {
@@ -163,8 +200,7 @@
 				caseSection.id = 'section5';
 				var content = '<h2>TIDIGARE UPPDRAG</h2><div class="caseCarousel">';
 				cases.map(function(data){
-					console.log(data.title)
-					content += `<form action="singleCase.html" class="caseCard">
+					content += `<form action="singleCase.html" class="caseCard" data-id="${data.id}">
 									<div>
 										<h3 class="caseCardCategory">${data.company}</h3>
 										<div>
@@ -182,7 +218,18 @@
 				caseSection.innerHTML = content;
 				section4.parentNode.insertBefore(caseSection, section4.nextSibling);
 				caseSliderMedia();
+				this.redirectListener();
 			});
+	}
+
+	Index.prototype.redirectListener = function () {
+		var buttons = document.querySelectorAll('.caseCard');
+		for (var i = 0; i < buttons.length; i++) { 
+			buttons[i].addEventListener('click',function(){
+				// http://excelninja.se/singleCase.html?id="  http://localhost:8888/singleCase.html?id=
+				window.location.href="http://excelninja.se/singleCase.html?id="+this.dataset.id;
+			});
+		}
 	}
 
 	function caseSliderMedia () {
@@ -259,16 +306,12 @@
 		this.clickHandler = makeHandler('click', (e) => {
 			var flyoutElement = document.querySelector('.caseForm'),
 				targetElement = e.target;  // clicked element
-				console.log(flyoutElement);
-				console.log(e.target);
 			do {
 				if (targetElement == flyoutElement) {
-					console.log('remove');
 					return;
 				}
 				targetElement = targetElement.parentNode;
 			} while (targetElement);
-			console.log('do nothing')
 			this.clickHandler.unlisten(document)
 			var select = document.querySelector('.adminProfile');
 			select.removeChild(select.lastChild);
@@ -293,7 +336,6 @@
 		var that = this
 		var content = '<div class="searchCases"><input type="text" name="searchCases" id="searchCases" required/><label for="searchCases">Search:</label></div><div class="cases">';
 		cases.map(function(data){
-			console.log(data.title)
 			content += `<div class="case">
 							<div class="id">${data.id}</div>
 							<div class="title">${data.title}</div>
@@ -322,7 +364,6 @@
 		const updateButton = document.getElementsByClassName('updateButton') 
 		for (var i = 0; i < updateButton.length; i++) { 
 			updateButton[i].addEventListener('click',function(){
-				console.log(this.dataset.id)
 				fetch('http://excelninja.se/server/fetchCaseWithId.php', {
 					method: 'POST',
 					mode: 'cors',
@@ -332,7 +373,6 @@
 					})
 					.then(response => response.json())
 					.then(data => {
-						console.log(data[0].title)
 						that.printCaseForm(data)
 					})
 			});
@@ -387,7 +427,6 @@
 			formData.forEach(function(value, key){
 				object[key] = value;
 			});
-			console.log(object)
 			that.clickHandler.unlisten(document)
 			if(data){
 				that.updateCase(object);
@@ -415,7 +454,6 @@
 		})
 			.then(response => response.json())
 			.then(fetched => {
-				console.log(fetched);
 			})
 			.catch(error => {
 				console.log(error);
@@ -440,7 +478,6 @@
 		  })
 			.then(response => response.json())
 			.then(fetched => {
-			  console.log(fetched);
 			})
 			.catch(error => {
 			  console.log(error);
@@ -458,7 +495,6 @@
 			})
 			.then(response => response.json())
 			.then(fetched => {
-				console.log(fetched);
 			})
 			.catch(error => {
 				console.log(error);
@@ -477,7 +513,6 @@
 (function () {
 	'use strict';
 	function SingleCase () {
-		console.log('test');
 		this.getSingleCaseId();
 	}
 
@@ -498,7 +533,6 @@
 			})
 			.then(response => response.json())
 			.then(data => {
-				console.log(data[0].title);
 				var content = `
 					<div class="singleCaseWrapper">
 						<a href="/">Tillbaka</a>

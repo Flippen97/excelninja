@@ -1,0 +1,130 @@
+.reference{
+    height: 70vh;
+    background-color: black;
+}
+.referenceLogos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    min-height: 35vh;
+}
+.referenceLogos > h2{
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+}
+.referenceLogos > div{
+    width: 33%;
+    filter: grayscale(1)
+}
+.referenceLogos > div > img{
+    width: 90%;
+    margin: 0 auto;
+}
+.referenceCompany{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 35vh;
+    padding: 0 15px;
+}
+.referenceCompany > div:nth-child(1),
+.referenceCompany > div:nth-child(3){
+    display: block;
+    font-size: 3.5em;
+    line-height: 0;
+    padding-bottom: 34px;
+}
+.referenceCompany > div > span{
+    display: block;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.referenceCompany > div > span:nth-child(2){
+    margin-bottom: 10px;
+}
+@include for-tablet{
+    .referenceLogos>h2 {
+        font-size: 2em;
+    }
+    .referenceLogos>div {
+        width: 20%;
+    }
+    .referenceCompany{
+        min-height: 35vh;
+        padding: 0 15%;
+    }
+    .referenceCompany > div:nth-child(1),
+    .referenceCompany > div:nth-child(3){
+        display: block;
+        font-size: 6.5em;
+        line-height: 0;
+        padding-bottom: 60px;
+    }
+    .referenceCompany > div > span{
+        font-size: 1.3em;
+        margin-top: 20px;
+    }
+    .referenceCompany > div > span:nth-child(2){
+        margin-bottom: 10px;
+    }
+}
+@include for-desktop{
+    .referenceLogos>h2 {
+        font-size: 1.8em;
+        margin: 10px 0;
+    }
+    .referenceLogos > div{
+        width: 18%;
+        filter: grayscale(1)
+    }
+    .referenceCompany{
+        padding: 0 20%;
+    }
+    .referenceCompany > div:nth-child(1),
+    .referenceCompany > div:nth-child(3){
+        display: block;
+        font-size: 6em;
+        line-height: 0;
+        padding-bottom: 55px;
+    }
+    .referenceCompany > div > span{
+        font-size: 1.3em;
+        margin-top: 20px;
+    }
+    .referenceCompany > div > span:nth-child(2){
+        margin-bottom: 10px;
+    }
+}
+@include for-landscape-mobile{
+    .referenceCompany>div:nth-child(1), 
+    .referenceCompany>div:nth-child(3) {
+        font-size: 3em;
+        padding-bottom: 30px;
+    }
+    .referenceCompany>div>span {
+        font-size: .7em;
+        margin-top: 5px;
+    }
+    .referenceCompany>div>span:nth-child(2) {
+        margin-bottom: 5px;
+    }
+    .referenceLogos>h2 {
+        font-size: .9em;
+    }
+    .referenceLogos>div {
+        width: 18%;
+    }
+}
+@include for-landscape-tablet{
+    .referenceLogos>h2 {
+        font-size: 2.3em;
+    }
+}

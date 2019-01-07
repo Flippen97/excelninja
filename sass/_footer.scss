@@ -5,11 +5,12 @@ footer{
     display: flex;
     align-items: center;
     img{
-        width: 25px;
+        width: 15px;
         margin: 0 10px 4px 0;
     }
     h2{
         font-size: 0.9em;
+        margin-bottom: 25px;
     }
     a{
         font-family: 'Merienda One', Arial, Helvetica, sans-serif; 
@@ -19,6 +20,7 @@ footer{
         display: flex;
         align-items: center;
         margin: 10px 0;
+        font-size: 0.8em;
     }
     div{
         width: 100%;
@@ -37,12 +39,12 @@ footer div:nth-last-child(1){
             margin-bottom: 25px;
         }
         a{
-            font-size: 1.2em;
+            font-size: 0.9em;
             margin: 15px 0;
         }
         img{
-            width: 35px;
-            margin: 0 15px 10px 0;
+            width: 20px;
+            margin: 0 15px 5px 0;
         }
         div{
             margin: 0 0 0 5%;
@@ -60,15 +62,15 @@ footer div:nth-last-child(1){
 @include for-desktop{
     footer{
         h2{
-            font-size: 1em;
+            font-size: 0.9em;
             margin-bottom: 0;
         }
         a{
-            font-size: 1em;
+            font-size: 0.8em;
             margin: 10px 0;
         }
         img{
-            width: 25px;
+            width: 15px;
             margin: 0 10px 4px 0;
         }
         div{

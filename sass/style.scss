@@ -10,6 +10,7 @@
 @import 'singleCase';
 @import 'offersPage';
 @import 'scroll-btn';
+@import 'reference';
 @import 'footer';
 /*
 main {
@@ -21,14 +22,6 @@ main {
 		font-size: $header-size;
 	}
 }*/
-@include for-desktop{
-    section{
-        background-attachment: fixed;
-    }
-    .quoteWrapper{
-        background-attachment: fixed;
-    }
-}
 *{
     box-sizing: border-box;
 }
@@ -41,11 +34,9 @@ h1, h2{
 }
 body {
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
-    /*background-color: rgba(42, 42, 46, 1);*/
     color: white;
-    /*  max-width: 1600px; */
     margin: 0 auto;
-    /* background-color: #000; */
+    background-color: #f9f9f9;
 }
 button{
     background-color: rgba(0,0,0,0.5);
@@ -55,43 +46,3 @@ button{
     border-radius: 10px;
     font-size: 12px;
 }
-
-/*
-.section3{
-    background-color: bl{
-
-    }
-    height: 100vh;
-    text-align: center;
-    display: grid;
-    align-items: center;{
-
-    }
-}
-.section3 p span:nth-child(1){
-   display: block; 
-   font-size: 2em;
-   margin-bottom: 20px;
-}
-.section3 p span:nth-child(2){
-    display: block; 
-    font-size: 1.2em;
-    margin-bottom: 20px;
- }
- .section3 p span:nth-child(3){
-    display: block; 
-    font-size: 1.2em;
-    margin-bottom: 20px;
- }
- .section3 p span:nth-child(4){
-    display: block; 
-    font-size: 1em;
-    margin-bottom: 20px;
- }
- .section3 p span:nth-child(5){
-    display: block; 
-    font-size: 1em;
-    margin-bottom: 20px;
- }
-
-*/
